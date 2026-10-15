@@ -36,5 +36,35 @@ app.post('/register', (req, res) => {
     console.log(ln);
 });
 
+// route for displaying data
+app.get('/view', (req, res)=>{
+    const getData = 'SELECT * FROM tbl_students';
+
+    // to execute the query
+    conn.query(getData,(err, students)=>{
+        if(err)throw err;
+        res.render('view', {
+            student: students 
+        })
+
+    });
+
+});//Closing of Displaying Data
+app.get('/delete/:id', (req,res) => {
+    const del_id = req.params.id;
+
+    const toDelete = `DELETE FROM tbl_students WHERE id = '${del_id}'`;
+
+    conn.query(toDelete, (err)=>{
+        if(err) throw err;
+        
+    res.send(`<script>
+        alert('Data Deleted');
+        location.href = '/view';
+        </script>`
+);
+    })
+})
+
 app.listen(8000);
 

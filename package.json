@@ -11,10 +11,8 @@
   "dependencies": {
     "ejs": "^6.0.1",
     "express": "^5.2.1",
-    "mysql": "^2.18.1",
-    "nodemon": "^3.1.14"
+    "mysql": "^2.18.1"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ronajeansenerez/3_5_NODE26.git"
@@ -23,5 +21,8 @@
     "url": "https://github.com/ronajeansenerez/3_5_NODE26/issues"
   },
   "homepage": "https://github.com/ronajeansenerez/3_5_NODE26#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
 }
